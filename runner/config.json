@@ -1,5 +1,5 @@
 {
-    "user_code_dir_relative": "../test/code/Test_20250413083043",
+    "user_code_dir_relative": "../test/code/Test",
     "code_entrypoint": "test.py",
     "power_assumptions": {
         "notes": "Rough estimates for M1 MacBook Air - ADJUST FOR YOUR HARDWARE",
