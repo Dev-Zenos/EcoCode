@@ -1,5 +1,6 @@
 import backend_runner as backend
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import requests
 import re
 import os
@@ -12,6 +13,7 @@ from pathlib import Path
 import shutil
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 CONFIG_FILE_PATH = os.path.join(os.path.dirname(__file__), 'config.json')
 
@@ -64,7 +66,8 @@ def generate_sandbox_code(data):
                     'peak_mem_mib': run_results.get('peak_mem_mib'),
                     'avg_power_watt': run_results.get('avg_power_watt'),
                     'energy_kwh': run_results.get('energy_kwh'),
-                    'power_assumptions_used': run_results.get('power_assumptions')
+                    'power_assumptions_used': run_results.get('power_assumptions'),
+                    'co2_rate': data['data']['co2_rate'],
                     # Optionally include logs: 'logs': run_results.get('logs', '[Logs not available]')
                 }
             }
@@ -97,6 +100,7 @@ def update_config(data):
             "baseline_container_watt": (float, int)
         },
         "repo_url": str,
+        "co2_rate": (float, int), # Allow float or int
     }
 
     # --- 2. Validate Input Data Structure and Types ---

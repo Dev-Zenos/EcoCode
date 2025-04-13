@@ -1,5 +1,5 @@
 {
-    "user_code_dir_relative": "../test/code/Test",
+    "user_code_dir_relative": "../test/code/Test_20250413112115",
     "code_entrypoint": "test.py",
     "power_assumptions": {
         "notes": "Rough estimates for M1 MacBook Air - ADJUST FOR YOUR HARDWARE",
@@ -7,5 +7,6 @@
         "ram_per_gb_watt": 0.15,
         "baseline_container_watt": 0.3
     },
-    "repo_url": "https://github.com/IceGemming/Test"
+    "repo_url": "https://github.com/IceGemming/Test",
+    "co2_rate": 738.038
 }
