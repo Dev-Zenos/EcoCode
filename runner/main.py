@@ -105,6 +105,7 @@ def update_config(data):
         },
         "repo_url": str,
         "co2_rate": (float, int), 
+        "container_wait_timeout": (float, int),
     }
 
     

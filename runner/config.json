@@ -1,13 +1,14 @@
 {
-    "user_code_dir_relative": "../test/code/EcoCode",
-    "code_entrypoint": "runner/main.py",
+    "user_code_dir_relative": "../test/code/Test_20250413142237",
+    "code_entrypoint": "test.py",
     "power_assumptions": {
         "notes": "Rough estimates for M1 MacBook Air - ADJUST FOR YOUR HARDWARE",
         "cpu_per_core_watt": 2.5,
         "ram_per_gb_watt": 0.15,
         "baseline_container_watt": 0.3
     },
-    "repo_url": "https://github.com/Dev-Zenos/EcoCode",
-    "co2_rate": 436.655,
-    "requirements": "docker"
+    "repo_url": "https://github.com/IceGemming/Test",
+    "co2_rate": 631.705,
+    "requirements": "docker",
+    "container_wait_timeout": 120
 }
