@@ -30,7 +30,9 @@ def receive():
                 data = request.get_json()
                 processed_data = {'received': data, 'status': 'success'}
                 print(f"Received data name: {data}")
-                return generate_sandbox_code(data)
+                returnstuff = generate_sandbox_code(data)
+                print(f"Generated sandbox code: {(returnstuff)}")
+                return returnstuff
 
             except Exception as e:
                 print(f"Error processing data: {e}")
@@ -68,9 +70,11 @@ def generate_sandbox_code(data):
                     'energy_kwh': run_results.get('energy_kwh'),
                     'power_assumptions_used': run_results.get('power_assumptions'),
                     'co2_rate': data['data']['co2_rate'],
-                    # Optionally include logs: 'logs': run_results.get('logs', '[Logs not available]')
+                    'logs': run_results.get('logs', '[Logs not available]'),
+                    'raw_stats': run_results.get('raw_stats', '[Raw stats not available]'),
                 }
             }
+            print(f"raw_stats: {run_results.get('raw_stats', '[Logs not available]')}")
             delete_directory_force(data['data']['user_code_dir_relative']) # Clean up the cloned repo
             return jsonify(response_data), 200 # HTTP 200 OK
 

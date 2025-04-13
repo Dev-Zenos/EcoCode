@@ -147,7 +147,7 @@ def run():
         'avg_power_watt': 0.0,
         'energy_kwh': 0.0,
         'power_assumptions': None,
-        # 'raw_stats': [] # Uncomment if you want to return all samples
+        'raw_stats': [] # Uncomment if you want to return all samples
     }
 
     SCRIPT_DIR = Path(__file__).parent.resolve()
@@ -314,7 +314,7 @@ def run():
         # --- Process statistics and Calculate Energy ---
         print("\n--- Processing Stats & Energy Estimation ---")
         results['samples_collected'] = len(local_stats_data)
-        # if 'raw_stats' in results: results['raw_stats'] = local_stats_data # Store if requested
+        if 'raw_stats' in results: results['raw_stats'] = local_stats_data # Store if requested
 
         if local_stats_data and run_duration > 0:
             total_cpu_perc_val = 0.0
