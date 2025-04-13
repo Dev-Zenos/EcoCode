@@ -1,13 +1,13 @@
 {
-    "user_code_dir_relative": "../test/code/Test",
-    "code_entrypoint": "test.py",
+    "user_code_dir_relative": "../test/code/EcoCode",
+    "code_entrypoint": "runner/main.py",
     "power_assumptions": {
-        "notes": "Using AMD R9 7950X3D 16C/32T Stock (156W) - Adjust other values as needed",
-        "cpu_per_core_watt": 156,
+        "notes": "Rough estimates for M1 MacBook Air - ADJUST FOR YOUR HARDWARE",
+        "cpu_per_core_watt": 2.5,
         "ram_per_gb_watt": 0.15,
         "baseline_container_watt": 0.3
     },
-    "repo_url": "https://github.com/IceGemming/Test",
+    "repo_url": "https://github.com/Dev-Zenos/EcoCode",
     "co2_rate": 436.655,
     "requirements": "docker"
 }
